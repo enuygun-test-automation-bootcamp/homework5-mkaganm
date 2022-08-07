@@ -5,3 +5,11 @@
 2-Contact Manager uygulamasının senaryoları yazılacak. https://github.com/movilidadagil/ContactManagerAPIProject
 3-Charles Proxy araştırılacak. (Optional-İsteyen araştırabilir, zorunlu değil)
 Not: Bu ödevde README.md dosyalarınızın özenli olmasını bekliyor olacağız.
+
+
+:pushpin: SessionNotFoundException - Appium Bağlantısı kesildiğinde veya oturum kurulmadığında atılır.
+
+:pushpin: ElementNotFoundException - Bir Element bulmaya çalıştığınızda atılır ve ardından element Bulunmaz.
+
+:pushpin: WebDriverException - Sürücü olmadığında atılır.
+
