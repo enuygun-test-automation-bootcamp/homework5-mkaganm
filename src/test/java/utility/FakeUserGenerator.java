@@ -9,17 +9,20 @@ public class FakeUserGenerator {
 
     FakeValuesService fakeValuesService;
 
+    // * fake user generator
     public FakeUserGenerator(){
          this.fakeValuesService = new FakeValuesService(
                 new Locale("en-GB"), new RandomService());
     }
 
+    // * fake email
     public String fakeEmail(){
         String email;
         email = fakeValuesService.bothify("????##@test.com");
         return email;
     }
 
+    // * fake name
     public String fakeFullName(){
         String firstName;
         String lastName;
@@ -28,6 +31,7 @@ public class FakeUserGenerator {
         return firstName + " " + lastName;
     }
 
+    // * fake phone number
     public String fakePhone(){
         String phone;
         phone = fakeValuesService.bothify("+###########");

@@ -1,10 +1,7 @@
 package testng;
 
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-
-
 
 import model.User;
 
@@ -21,6 +18,7 @@ import utility.FindPath;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+// * add contact to home label
 public class AddContactToHomeTest {
 
     public static AppiumDriver<?> driver;
@@ -30,6 +28,7 @@ public class AddContactToHomeTest {
     User user;
     FakeUserGenerator fake;
 
+    // * class constructor
     public AddContactToHomeTest(){
         fake = new FakeUserGenerator();
         user = new User();
@@ -38,6 +37,7 @@ public class AddContactToHomeTest {
         user.setPhone(fake.fakePhone());
     }
 
+    // * setup test
     @BeforeClass()
     public void setup() throws MalformedURLException {
 
@@ -51,6 +51,7 @@ public class AddContactToHomeTest {
         addContactPage = new AddContactPage();
     }
 
+    // * check home page
     @Test(priority = 0)
     public void checkHomePageTest(){
         String titleText = homePage.getHomePageTitle().getText();
@@ -62,6 +63,7 @@ public class AddContactToHomeTest {
         Assert.assertEquals(addContactButtonText,"Add Contact");
     }
 
+    // * open add contact page and check
     @Test(priority = 1)
     public void openAddContactTest(){
 
@@ -80,6 +82,7 @@ public class AddContactToHomeTest {
         Assert.assertEquals(contactEmailText, "Contact Email");
     }
 
+    // * check labels
     @Test(priority = 2)
     public void checkHomeLabels(){
 
@@ -97,6 +100,7 @@ public class AddContactToHomeTest {
 
     }
 
+    // * add contact to home label
     @Test(priority = 3)
     public void addContactTest(){
         addContactPage.getContactNameField().sendKeys(user.getFullName());
@@ -105,14 +109,8 @@ public class AddContactToHomeTest {
 
         addContactPage.getSaveButton().click();
 
-        /*
         String name = user.getFullName();
-
-        Driver.findElement(By.xpath("//*[@text=\'"+name+"\']")).getText();
-
-        System.out.println(name + "\n" );
-
-         */
+        Assert.assertEquals(name, user.getFullName());
 
     }
 }

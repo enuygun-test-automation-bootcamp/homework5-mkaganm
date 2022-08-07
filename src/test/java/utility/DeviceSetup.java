@@ -10,6 +10,7 @@ import java.util.Map;
 
 public class DeviceSetup {
 
+    // * get android capabilities from config json file
     public static DesiredCapabilities DeviceCapabilitites(String jsonPath) {
         try {
             Gson gson = new Gson();

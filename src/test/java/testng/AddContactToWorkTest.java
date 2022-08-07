@@ -1,7 +1,7 @@
 package testng;
 
 
-import io.appium.java_client.AppiumDriver;
+
 import io.appium.java_client.android.AndroidDriver;
 
 
@@ -21,15 +21,13 @@ import utility.FindPath;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AddContactToWorkTest {
+// * save to work label
 
-    public static AppiumDriver<?> driver;
-    HomePage homePage;
-    AddContactPage addContactPage;
-    DesiredCapabilities capabilities;
-    User user;
-    FakeUserGenerator fake;
 
+public class AddContactToWorkTest extends AddContactToHomeTest{
+
+
+    // * class constructor
     public AddContactToWorkTest(){
         fake = new FakeUserGenerator();
         user = new User();
@@ -38,6 +36,8 @@ public class AddContactToWorkTest {
         user.setPhone(fake.fakePhone());
     }
 
+    // * setup class
+    @Override
     @BeforeClass()
     public void setup() throws MalformedURLException {
 
@@ -51,6 +51,7 @@ public class AddContactToWorkTest {
         addContactPage = new AddContactPage();
     }
 
+    // * check home page
     @Test(priority = 0)
     public void checkHomePageTest(){
         String titleText = homePage.getHomePageTitle().getText();
@@ -62,6 +63,7 @@ public class AddContactToWorkTest {
         Assert.assertEquals(addContactButtonText,"Add Contact");
     }
 
+    // * open add contact page and check
     @Test(priority = 1)
     public void openAddContactTest(){
 
@@ -80,6 +82,7 @@ public class AddContactToWorkTest {
         Assert.assertEquals(contactEmailText, "Contact Email");
     }
 
+    // * check labels
     @Test(priority = 2)
     public void checkWorkLabels(){
 
@@ -97,6 +100,7 @@ public class AddContactToWorkTest {
 
     }
 
+    // * save user
     @Test(priority = 3)
     public void addContactTest(){
         addContactPage.getContactNameField().sendKeys(user.getFullName());
@@ -105,7 +109,8 @@ public class AddContactToWorkTest {
 
         addContactPage.getSaveButton().click();
 
-
+        String name = user.getFullName();
+        Assert.assertEquals(name, user.getFullName());
 
     }
 }

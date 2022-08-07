@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 
 public class FindPath {
 
-
+    // * find app path
     public static String returnAppPath(){
         String path;
         Path resourceDirectory = Paths.get("src","test","resources","apps","ContactManager.apk");
