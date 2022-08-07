@@ -1,7 +1,5 @@
 package testng;
 
-
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 
 
@@ -21,16 +19,11 @@ import utility.FindPath;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-@Test
+// * save to mobile label
 public class AddContactToMobileTest extends AddContactToHomeTest{
 
-    public static AppiumDriver<?> driver;
-    HomePage homePage;
-    AddContactPage addContactPage;
-    DesiredCapabilities capabilities;
-    User user;
-    FakeUserGenerator fake;
 
+    // * class constructor
     public AddContactToMobileTest(){
         fake = new FakeUserGenerator();
         user = new User();
@@ -39,6 +32,8 @@ public class AddContactToMobileTest extends AddContactToHomeTest{
         user.setPhone(fake.fakePhone());
     }
 
+    // * setup test
+    @Override
     @BeforeClass()
     public void setup() throws MalformedURLException {
 
@@ -52,6 +47,7 @@ public class AddContactToMobileTest extends AddContactToHomeTest{
         addContactPage = new AddContactPage();
     }
 
+    // * check home page
     @Test(priority = 0)
     public void checkHomePageTest(){
         String titleText = homePage.getHomePageTitle().getText();
@@ -63,6 +59,7 @@ public class AddContactToMobileTest extends AddContactToHomeTest{
         Assert.assertEquals(addContactButtonText,"Add Contact");
     }
 
+    // * open and check add contact page
     @Test(priority = 1)
     public void openAddContactTest(){
 
@@ -81,6 +78,7 @@ public class AddContactToMobileTest extends AddContactToHomeTest{
         Assert.assertEquals(contactEmailText, "Contact Email");
     }
 
+    // * check mobile label
     @Test(priority = 2)
     public void checkHomeLabels(){
 
@@ -97,7 +95,7 @@ public class AddContactToMobileTest extends AddContactToHomeTest{
         Assert.assertEquals(emailSpinnerText, "Home");
 
     }
-
+    // * save contact to mobile label
     @Test(priority = 3)
     public void addContactTest(){
         addContactPage.getContactNameField().sendKeys(user.getFullName());
@@ -106,14 +104,8 @@ public class AddContactToMobileTest extends AddContactToHomeTest{
 
         addContactPage.getSaveButton().click();
 
-        /*
         String name = user.getFullName();
-
-        Driver.findElement(By.xpath("//*[@text=\'"+name+"\']")).getText();
-
-        System.out.println(name + "\n" );
-
-         */
+        Assert.assertEquals(name, user.getFullName());
 
     }
 }

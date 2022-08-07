@@ -65,14 +65,4 @@ public class AddContactPage extends BasePages{
     private MobileElement saveButton;
 
 
-
-
-
-
-
-
-
-
-
-
 }
