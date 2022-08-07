@@ -16,6 +16,7 @@ Not: Bu ödevde README.md dosyalarınızın özenli olmasını bekliyor olacağ�
 
 ---
 
+
 [AddContactToHomeTest](https://github.com/enuygun-test-automation-bootcamp/homework5-mkaganm/blob/main/src/test/java/testng/AddContactToHomeTest.java) - home etiketi ile ana sayfa testleri, kayıt sayfası testleri, kullanıcı kaydı vb. testlerin bulunduğu test sınıfı
 
 [AddContactToMobileTest](https://github.com/enuygun-test-automation-bootcamp/homework5-mkaganm/blob/main/src/test/java/testng/AddContactToMobileTest.java)- mobile etiketi ile ana sayfa testleri, kayıt sayfası testleri, kullanıcı kaydı vb. testlerin bulunduğu test sınıfı
@@ -42,6 +43,17 @@ Not: Bu ödevde README.md dosyalarınızın özenli olmasını bekliyor olacağ�
 [FakeUserGenerator](https://github.com/enuygun-test-automation-bootcamp/homework5-mkaganm/blob/main/src/test/java/utility/FakeUserGenerator.java) - sahte kullanıcı işlemlerinin bulunduğu sınıf
 
 [FindPath](https://github.com/enuygun-test-automation-bootcamp/homework5-mkaganm/blob/main/src/test/java/utility/FindPath.java) - sonra geliştirilmek üzere eklenen path sınıfı
+
+---
+:pushpin: TestNG - Testler için kullanıldı.
+
+:pushpin: lombok - getter setter metodları için kullanıldı.
+
+:pushpin: appium - Android driver için kullanıldı.
+
+:pushpin: javafaker - fake kullanıcı oluşturmak için kullanıldı.
+
+:pushpin: cucumber - test senaryolarının yazılı olarak durması için kullanıldı. Proje açısından işlevi yok.
 
 
 
